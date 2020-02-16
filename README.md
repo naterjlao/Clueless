@@ -9,7 +9,7 @@ https://www.hasbro.com/common/instruct/clueins.pdf
 
 ## Contributors
 * Andrew Natarian
-* Tolly Powell
+* cheersmate
 * Claire Glenn
 * Nate Lao
 
