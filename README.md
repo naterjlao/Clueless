@@ -14,16 +14,20 @@ https://www.hasbro.com/common/instruct/clueins.pdf
 * Nate Lao
 
 ## Usage
-*Clueless* can be played by TODO
+*Clueless* runs on a public server. To access *Clueless*, go to this webpage:
+
+https://NotALink.fake
+
+There, start a game by... TODO
 
 ## Dependencies
-*Clueless* is dependent on the following software packages that need to be installed on the client machine:
-* A computer
-* TODO
 
-*Clueless* is dependent on the following software packages that need to be installed on the server machine:
-* A computer
-* TODO
+### Client
+*Clueless* is dependent on the web browser the Client is using. The recommended browser is Firefox or Google Chrome. Do not use Internet Explorer.
+
+### Server
+The *Clueless* server operates on a Debian virual machine. The main packages installed on Clueless are:
+TODO
 
 ## Known Issues
 * Unimplemented
