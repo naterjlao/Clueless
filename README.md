@@ -29,6 +29,17 @@ There, start a game by... TODO
 The *Clueless* server operates on a Debian virual machine. The main packages installed on Clueless are:
 TODO
 
+## Subsystems
+
+### Front-End
+https://github.com/naterjlao/clueless_frontend
+
+### Server-Side
+https://github.com/naterjlao/clueless_serverside
+
+### Back-End
+https://github.com/naterjlao/clueless_backend
+
 ## Known Issues
 * Unimplemented
 * TODO
