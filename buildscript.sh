@@ -10,8 +10,8 @@
 ##############################################################################
 # Build configuration
 ##############################################################################
-$PACKAGE_NAME='clueless'
-$PACKAGE=${PACKAGE_NAME}_$TAG_CONFIG
+PACKAGE_NAME='clueless'
+PACKAGE="${PACKAGE_NAME}_${TAG_CONFIG}"
 source $WORKSPACE/clueless_config/config.sh
 
 ##############################################################################
