@@ -45,9 +45,9 @@ mkdir -vp $BACKEND_DIR
 mkdir -vp $LOG_DIR
 
 echo 'IMPORTING SUBSYSTEMS:'
-mv -v $WORKSPACE/$PACKAGE/clueless_frontend/*     $FRONTEND_DIR
-mv -v $WORKSPACE/$PACKAGE/clueless_serverside/*   $SERVERSIDE_DIR
-mv -v $WORKSPACE/$PACKAGE/clueless_backend/*      $BACKEND_DIR
+mv -v $WORKSPACE/clueless_frontend/*              $FRONTEND_DIR
+mv -v $WORKSPACE/clueless_serverside/*            $SERVERSIDE_DIR
+mv -v $WORKSPACE/clueless_backend/*               $BACKEND_DIR
 
 echo 'IMPORTING INSTALLATION CONFIGURATION:'
 mv -v $WORKSPACE/Clueless/DEBIAN                  $PACKAGE
