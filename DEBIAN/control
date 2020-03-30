@@ -8,8 +8,7 @@ Homepage: google.com
 Package: Clueless
 Version: _VERSION_
 Architecture: all
-Depends: zip
+Depends: zip, git, ufw, git-core, curl, build-essential, openssl, libssl-dev, python3
 Description: Clueless Debian Server Installer
  Installs the essential components for the
  Clueless Server
- 
