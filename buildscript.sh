@@ -55,5 +55,7 @@ mv -v $WORKSPACE/Clueless/DEBIAN                  $PACKAGE
 echo 'SETTING VERSION:'
 sed -i "s/_VERSION_/${TAG_CONFIG}/g"              $WORKSPACE/$PACKAGE/DEBIAN/control
 
+echo 'BUILDING INSTALLER:'
+dpkg-deb --build $PACKAGE
 
 
