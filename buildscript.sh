@@ -50,10 +50,10 @@ mv -v $WORKSPACE/$PACKAGE/clueless_serverside/*   $SERVERSIDE_DIR
 mv -v $WORKSPACE/$PACKAGE/clueless_backend/*      $BACKEND_DIR
 
 echo 'IMPORTING INSTALLATION CONFIGURATION:'
-mv -v $WORKSPACE/DEBIAN                           $PACKAGE
+mv -v $WORKSPACE/Clueless/DEBIAN                  $PACKAGE
 
 echo 'SETTING VERSION:'
-sed -i "s/_VERSION_/${TAG_CONFIG}/g"              $PACKAGE/DEBIAN/control
+sed -i "s/_VERSION_/${TAG_CONFIG}/g"              $PACKAGE/Clueless/DEBIAN/control
 
 
 
