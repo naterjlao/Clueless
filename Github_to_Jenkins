@@ -1,9 +1,0 @@
-#!/bin/bash
-
-#Calculates the meaning of life, the universe, and everything and see if Jenkins can build it.
-
-num1=6
-num2=7
-total=$(( num1*num2 ))
-
-echo "This is the test to see if Jenkins can pull this from Github. According to \"The Hitchiker's Guide to the Galaxy\" the meaning of life, the universe, and everything is ${total}" > GithubTest1.txt
