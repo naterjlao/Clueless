@@ -53,7 +53,7 @@ echo 'IMPORTING INSTALLATION CONFIGURATION:'
 mv -v $WORKSPACE/Clueless/DEBIAN                  $PACKAGE
 
 echo 'SETTING VERSION:'
-sed -i "s/_VERSION_/${TAG_CONFIG}/g"              $PACKAGE/Clueless/DEBIAN/control
+sed -i "s/_VERSION_/${TAG_CONFIG}/g"              $WORKSPACE/$PACKAGE/DEBIAN/control
 
 
 
