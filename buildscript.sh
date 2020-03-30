@@ -33,7 +33,7 @@ echo 'CLONING SUBSYSTEMS:'
 git clone --branch $TAG_FRONTEND git@github.com:naterjlao/clueless_frontend.git
 git clone --branch $TAG_SERVERSIDE git@github.com:naterjlao/clueless_serverside.git
 git clone --branch $TAG_BACKEND git@github.com:naterjlao/clueless_backend.git
-find . -name ".git" | xargs -I{} rm -rvf {} # cloning leaves this, should not be installed on system
+find . -name ".git" | xargs -I{} rm -rf {} # cloning leaves this, should not be installed on system
 
 echo 'GENERATING PACKAGE DIRECTORY:'
 mkdir -v  $WORKSPACE/$PACKAGE
@@ -45,11 +45,15 @@ mkdir -vp $BACKEND_DIR
 mkdir -vp $LOG_DIR
 
 echo 'IMPORTING SUBSYSTEMS:'
+mv -v $WORKSPACE/$PACKAGE/clueless_frontend/*     $FRONTEND_DIR
+mv -v $WORKSPACE/$PACKAGE/clueless_serverside/*   $SERVERSIDE_DIR
+mv -v $WORKSPACE/$PACKAGE/clueless_backend/*      $BACKEND_DIR
 
+echo 'IMPORTING INSTALLATION CONFIGURATION:'
+mv -v $WORKSPACE/DEBIAN                           $PACKAGE
 
-
-
-
+echo 'SETTING VERSION:'
+sed -i "s/_VERSION_/${TAG_CONFIG}/g"              $PACKAGE/DEBIAN/control
 
 
 
