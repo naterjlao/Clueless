@@ -1,0 +1,14 @@
+Source: TIAAT
+Section: unknown
+Priority: optional
+Maintainer: Nate Lao <nlao1@jh.edu>
+Build-Depends: debhelper (>=10)
+Standards-Version: 4.0.0
+Homepage: google.com
+Package: Clueless
+Version: _VERSION_
+Architecture: all
+Depends: zip
+Description: Clueless Debian Server Installer
+ Installs the essential components for the
+ Clueless Server
