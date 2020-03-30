@@ -12,10 +12,14 @@
 ##############################################################################
 PACKAGE_NAME='clueless'
 PACKAGE="${PACKAGE_NAME}_${TAG_CONFIG}"
-FRONTEND_DIR=$WORKSPACE/$PACKAGE/opt/$PACKAGE_NAME/frontend
-SERVERSIDE_DIR=$WORKSPACE/$PACKAGE/opt/$PACKAGE_NAME/serverside
-BACKEND_DIR=$WORKSPACE/$PACKAGE/opt/$PACKAGE_NAME/backend
+SRC_DIR=$WORKSPACE/$PACKAGE/opt/$PACKAGE_NAME/src
 LOG_DIR=$WORKSPACE/$PACKAGE/opt/$PACKAGE_NAME/log
+ETC_DIR=$WORKSPACE/$PACKAGE/opt/$PACKAGE_NAME/etc
+
+FRONTEND_DIR=$SRC_DIR/frontend
+SERVERSIDE_DIR=$SRC_DIR/serverside
+BACKEND_DIR=$SRC_DIR/backend
+
 source $WORKSPACE/clueless_config/config.sh
 
 ##############################################################################
@@ -36,13 +40,15 @@ git clone --branch $TAG_BACKEND git@github.com:naterjlao/clueless_backend.git
 find . -name ".git" | xargs -I{} rm -rf {} # cloning leaves this, should not be installed on system
 
 echo 'GENERATING PACKAGE DIRECTORY:'
-mkdir -v  $WORKSPACE/$PACKAGE
+mkdir -v                                         $WORKSPACE/$PACKAGE
 
 echo 'GENERATING PACKAGE SUBDIRECTORIES:'
-mkdir -vp $FRONTEND_DIR
-mkdir -vp $SERVERSIDE_DIR
-mkdir -vp $BACKEND_DIR
-mkdir -vp $LOG_DIR
+mkdir -vp                                         $SRC_DIR
+mkdir -vp                                         $LOG_DIR
+mkdir -vp                                         $ETC_DIR
+mkdir -vp                                         $FRONTEND_DIR
+mkdir -vp                                         $SERVERSIDE_DIR
+mkdir -vp                                         $BACKEND_DIR
 
 echo 'IMPORTING SUBSYSTEMS:'
 mv -v $WORKSPACE/clueless_frontend/*              $FRONTEND_DIR
