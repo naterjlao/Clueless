@@ -1,0 +1,17 @@
+#!/bin/bash
+##############################################################################
+# File: postrm
+# Author: Nate Lao (nlao1@jh.edu)
+# Created On: 3/30/2020
+# Description:
+#       Debian post removal script for Clueless.
+##############################################################################
+
+$OPT_DIR=/opt/clueless
+$SRC_DIR=$OPT_DIR/src
+$LOG_DIR=$OPT_DIR/log
+$ETC_DIR=$OPT_DIR/etc
+
+rm -rvf $SRC_DIR
+rm -rvf $LOG_DIR
+rm -rvf $ETC_DIR

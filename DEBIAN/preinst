@@ -1,0 +1,33 @@
+#!/bin/bash
+##############################################################################
+# File: preinst
+# Author: Nate Lao (nlao1@jh.edu)
+# Created On: 3/30/2020
+# Description:
+#       Debian pre installation script for Clueless.
+##############################################################################
+
+##############################################################################
+# Kill any existing services
+##############################################################################
+echo "KILLING node"
+killall node
+
+echo "KILLING npm"
+killall npm
+
+echo "KILLING ng"
+pkill -f ng
+
+##############################################################################
+# Install NodeJS if necessary
+##############################################################################
+echo 'Installing NodeJS'
+
+curl -sL https://deb.nodesource.com/setup_13.x | bash -      # Install from net the source code
+apt-get install nodejs -y                                    # Install nodejs package
+npm install -fg --ignore-scripts @angular/cli                # Install ng
+npm install -fg --ignore-scripts concurrently                # Install the npm concurrently command
+
+# TODO - must decide if configuring network and SSH is appropriate for this.
+# TODO - could be pushed as a procedure for User

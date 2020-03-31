@@ -1,0 +1,18 @@
+#!/bin/bash
+##############################################################################
+# File: postinst
+# Author: Nate Lao (nlao1@jh.edu)
+# Created On: 3/30/2020
+# Description:
+#       Debian post installation script.
+##############################################################################
+
+$ANGULAR_DIR='/opt/clueless/src/frontend'
+
+cd $ANGULAR_DIR
+
+echo 'RUNNING npm install'
+npm install
+
+echo 'RUNNING ng build'
+ng build

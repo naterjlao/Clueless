@@ -1,0 +1,20 @@
+#!/bin/bash
+##############################################################################
+# File: prerm
+# Author: Nate Lao (nlao1@jh.edu)
+# Created On: 3/30/2020
+# Description:
+#       Debian pre removal script for Clueless.
+##############################################################################
+
+##############################################################################
+# Kill any existing services
+##############################################################################
+echo "KILLING node"
+killall node
+
+echo "KILLING npm"
+killall npm
+
+echo "KILLING ng"
+pkill -f ng
