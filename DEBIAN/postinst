@@ -11,6 +11,9 @@ ANGULAR_DIR='/opt/clueless/src/frontend'
 
 cd $ANGULAR_DIR
 
+echo 'RUNNING npm uninstall *'
+npm uninstall *
+
 echo 'RUNNING npm install'
 npm install
 
