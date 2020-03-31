@@ -7,7 +7,7 @@
 #       Debian post installation script.
 ##############################################################################
 
-$ANGULAR_DIR='/opt/clueless/src/frontend'
+ANGULAR_DIR='/opt/clueless/src/frontend'
 
 cd $ANGULAR_DIR
 
