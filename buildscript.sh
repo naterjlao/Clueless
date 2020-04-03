@@ -39,6 +39,12 @@ git clone --branch $TAG_SERVERSIDE git@github.com:naterjlao/clueless_serverside.
 git clone --branch $TAG_BACKEND git@github.com:naterjlao/clueless_backend.git
 find . -name ".git" | xargs -I{} rm -rf {} # cloning leaves this, should not be installed on system
 
+echo 'VERIFYING IF CLONE WAS SUCESSFULL'
+if [ ! -d $WORKSPACE/clueless_frontend ];        then exit 1; fi
+if [ ! -d $WORKSPACE/clueless_serverside ];      then exit 1; fi
+if [ ! -d $WORKSPACE/clueless_backend ];         then exit 1; fi
+echo 'CLONE GOOD, CARRY ON'
+
 echo 'GENERATING PACKAGE DIRECTORY:'
 mkdir -v                                         $WORKSPACE/$PACKAGE
 
