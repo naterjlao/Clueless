@@ -51,7 +51,9 @@ mkdir -vp                                         $SERVERSIDE_DIR
 mkdir -vp                                         $BACKEND_DIR
 
 echo 'IMPORTING SUBSYSTEMS:'
-mv -v $WORKSPACE/clueless_frontend/*              $FRONTEND_DIR
+if [ -d $WORKSPACE/clueless_frontend/Clue-Less ]               ; then
+mv -v $WORKSPACE/clueless_frontend/Clue-Less/*    $FRONTEND_DIR; else
+mv -v $WORKSPACE/clueless_frontend/*              $FRONTEND_DIR; fi
 mv -v $WORKSPACE/clueless_serverside/*            $SERVERSIDE_DIR
 mv -v $WORKSPACE/clueless_backend/*               $BACKEND_DIR
 
