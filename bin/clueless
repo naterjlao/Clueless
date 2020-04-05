@@ -9,7 +9,12 @@
 #          Includes argument completion.
 ################################################################################
 
+# TODO add header information when this is passed with no arguments
+
 # TODO implement argparse
+# --version
 # --start
 # --stop
 # --configure <param> <value>
+
+print("I do nothing because I am not implemented")
