@@ -1,6 +1,6 @@
 #!/bin/bash
 ################################################################################
-# File: setConfig.sh
+# File: setGlobalConfiguration.sh
 # Language: Bash
 # Author: Nate Lao (nlao1@jh.edu)
 # Date Created: 4/5/2020
