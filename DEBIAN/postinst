@@ -20,6 +20,9 @@ chmod -v 444                       $ETC_DIR/environment.ts.template
 echo 'CREATING SYMBOLIC LINK IN /usr/bin'
 ln    -sv     $BIN_DIR/clueless    $USR_BIN/clueless
 
+echo 'GENERATING CONFIGURATION'
+bash $BIN_DIR/modifyConfig.sh
+
 ##############################################################################
 # Angular installation
 ##############################################################################
