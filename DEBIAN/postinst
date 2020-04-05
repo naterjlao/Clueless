@@ -17,5 +17,5 @@ npm uninstall *
 echo 'RUNNING npm install'
 npm install
 
-echo 'RUNNING ng build'
-ng build
+#echo 'RUNNING ng build'
+#ng build
