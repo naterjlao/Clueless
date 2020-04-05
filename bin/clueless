@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+################################################################################
+# File: clueless
+# Language: python3
+# Author: Nate Lao (nlao1@jh.edu)
+# Date Created: 4/5/2020
+# Description:
+#          Command line utility for Clueless.
+#          Includes argument completion.
+################################################################################
+
+# TODO implement argparse
+# --start
+# --stop
+# --configure <param> <value>
