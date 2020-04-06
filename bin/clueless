@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+import argparse
+import subprocess
 ################################################################################
 # File: clueless
 # Language: python3
@@ -9,12 +11,77 @@
 #          Includes argument completion.
 ################################################################################
 
-# TODO add header information when this is passed with no arguments
+BIN_DIR='/opt/clueless/bin'
+ABOUT_HEADER =\
+"""
+=======> CLUELESS <=======
+=> A GAME FOR EVERYONE! <=
+"""
 
-# TODO implement argparse
-# --version
-# --start
-# --stop
-# --configure <param> <value>
+print("Clueless Command Line Interface (CLI)")
 
-print("I do nothing because I am not implemented")
+################################################################################
+# START OF PARSING SECTION >>>
+################################################################################
+
+parser = argparse.ArgumentParser('Clueless')
+
+################################################################################
+# Usage: clueless [--about | --start | --stop | --version]
+################################################################################
+mutex_parser = parser.add_mutually_exclusive_group()
+
+mutex_parser.add_argument('--about',action='store_true',help='Show Clueless information')
+mutex_parser.add_argument('--start',action='store_true',help='Start Clueless Server')
+mutex_parser.add_argument('--stop', action='store_true',help='Stop Clueless Server')
+mutex_parser.add_argument('--restart', action='store_true',help='Restart Clueless Server')
+
+################################################################################
+# Usage: clueless config <TYPE> <VALUE>
+################################################################################
+subparser = parser.add_subparsers(dest='command')
+config_parser = subparser.add_parser('configure')
+config_options = config_parser.add_argument_group(title='Edit Configuration')
+
+config_options.add_argument('--serverIP', help='Change server IP configuration')
+config_options.add_argument('--serverPort', help='Change server port number')
+config_options.add_argument('--httpPort', help='Change HTTP port number')
+
+args = parser.parse_args()
+
+################################################################################
+# END OF PARSING SECTION <<<
+################################################################################
+
+################################################################################
+# START OF ACTION SECTION >>>
+################################################################################
+if (args.about):
+    version = subprocess.getoutput('dpkg -s clueless | grep Version | grep -v Standards')
+    print(ABOUT_BANNER)
+    print(version)
+elif (args.start):
+    print("STARTING CLUELESS SERVER...")
+    print("I am doing nothing because I am UNIMPLMENTED") #TODO
+elif (args.stop):
+    print("STOPPING CLUELESS SERVER...")
+    print("I am doing nothing because I am UNIMPLMENTED") #TODO
+elif (args.stop):
+    print("STOPPING CLUELESS SERVER...")
+    print("I am doing nothing because I am UNIMPLMENTED") #TODO
+elif (args.command == 'configure')
+    if (args.serverIP != None):
+        print("Setting server IP to %s" % args.serverIP)
+        print("I am doing nothing because I am UNIMPLMENTED") #TODO
+    if (args.serverPort != None):
+        print("Setting server port number to %s" % args.serverPort)
+        print("I am doing nothing because I am UNIMPLMENTED") #TODO
+    if (args.httpPort != None):
+        print("Setting HTTP port number to %s" % args.httpPort)
+        print("I am doing nothing because I am UNIMPLMENTED") #TODO
+   
+################################################################################
+# END OF PARSING SECTION <<<
+################################################################################
+
+print(args)
