@@ -67,6 +67,7 @@ mv -v $WORKSPACE/clueless_backend/*               $BACKEND_DIR
 
 echo 'IMPORTING BIN:'
 mv -v $WORKSPACE/Clueless/bin/*                   $BIN_DIR
+mv -v $WORKSPACE/clueless_serverside/clueless     $BIN_DIR       # CLI python script
 
 echo 'IMPORTING ETC:'
 mv -v $WORKSPACE/Clueless/etc/*                   $ETC_DIR
