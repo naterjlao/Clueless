@@ -30,11 +30,12 @@ touch $TMP_DIR/$FRONTEND_CONFIG
 
 # Generate the configuration file for the FrontEnd
 cat  $ETC_DIR/$FRONTEND_CONFIG_TEMPLATE              > $TMP_DIR/$FRONTEND_CONFIG
-echo 'export const network = {'                     >> $TMP_DIR/$FRONTEND_CONFIG
-echo "  HTTP_PORT: \"$HTTP_PORT\","                 >> $TMP_DIR/$FRONTEND_CONFIG
-echo "  SERVER_IP: \"$SERVER_IP\","                 >> $TMP_DIR/$FRONTEND_CONFIG
-echo "  SERVER_PORT: \"$SERVER_PORT\""              >> $TMP_DIR/$FRONTEND_CONFIG
-echo '};'                                           >> $TMP_DIR/$FRONTEND_CONFIG
+echo 'export const environment = {'                  >> $TMP_DIR/$FRONTEND_CONFIG
+echo "  \"production\": false,"                      >> $TMP_DIR/$FRONTEND_CONFIG
+echo "  \"httpPort\"  : \"$HTTP_PORT\","             >> $TMP_DIR/$FRONTEND_CONFIG
+echo "  \"hostServer\": \"$SERVER_IP\","             >> $TMP_DIR/$FRONTEND_CONFIG
+echo "  \"serverPort\": \"$SERVER_PORT\""            >> $TMP_DIR/$FRONTEND_CONFIG
+echo '};'                                            >> $TMP_DIR/$FRONTEND_CONFIG
 
 # Send to the FrontEnd configuration directory
 cp -v $TMP_DIR/$FRONTEND_CONFIG $FRONTEND_CONFIG_DIR/$FRONTEND_CONFIG

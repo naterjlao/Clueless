@@ -6,6 +6,3 @@
 *        Custom configuration file for Project Clueless.
 ******************************************************************************/
 
-export const environment = {
-  production: true
-};
