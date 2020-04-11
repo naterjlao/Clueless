@@ -25,7 +25,6 @@ pkill -f ng
 echo 'Installing NodeJS'
 
 curl -sL https://deb.nodesource.com/setup_13.x | bash -      # Install from net the source code
-apt-get install -y nodejs
 npm install -fg --ignore-scripts @angular/cli                # Install ng
 npm install -fg --ignore-scripts concurrently                # Install the npm concurrently command
 
