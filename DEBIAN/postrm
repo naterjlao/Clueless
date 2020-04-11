@@ -11,7 +11,12 @@ OPT_DIR=/opt/clueless
 SRC_DIR=$OPT_DIR/src
 LOG_DIR=$OPT_DIR/log
 ETC_DIR=$OPT_DIR/etc
+USR_BIN=/usr/bin
 
+echo 'REMOVING SYM LINKS'
+rm -rvf $USR_BIN/clueless
+
+echo 'REMOVING SRC DIRECTORIES'
 rm -rvf $SRC_DIR
 rm -rvf $LOG_DIR
 rm -rvf $ETC_DIR

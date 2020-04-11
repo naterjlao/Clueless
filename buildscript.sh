@@ -12,6 +12,7 @@
 ##############################################################################
 PACKAGE_NAME='clueless'
 PACKAGE="${PACKAGE_NAME}_${TAG_CONFIG}"
+BIN_DIR=$WORKSPACE/$PACKAGE/opt/$PACKAGE_NAME/bin
 SRC_DIR=$WORKSPACE/$PACKAGE/opt/$PACKAGE_NAME/src
 LOG_DIR=$WORKSPACE/$PACKAGE/opt/$PACKAGE_NAME/log
 ETC_DIR=$WORKSPACE/$PACKAGE/opt/$PACKAGE_NAME/etc
@@ -49,6 +50,7 @@ echo 'GENERATING PACKAGE DIRECTORY:'
 mkdir -v                                         $WORKSPACE/$PACKAGE
 
 echo 'GENERATING PACKAGE SUBDIRECTORIES:'
+mkdir -vp                                         $BIN_DIR
 mkdir -vp                                         $SRC_DIR
 mkdir -vp                                         $LOG_DIR
 mkdir -vp                                         $ETC_DIR
@@ -63,9 +65,16 @@ mv -v $WORKSPACE/clueless_frontend/*              $FRONTEND_DIR; fi
 mv -v $WORKSPACE/clueless_serverside/*            $SERVERSIDE_DIR
 mv -v $WORKSPACE/clueless_backend/*               $BACKEND_DIR
 
+echo 'IMPORTING BIN:'
+mv -v $WORKSPACE/Clueless/bin/*                   $BIN_DIR
+mv -v $WORKSPACE/clueless_serverside/clueless     $BIN_DIR       # CLI python script
+
+echo 'IMPORTING ETC:'
+mv -v $WORKSPACE/Clueless/etc/*                   $ETC_DIR
+
 echo 'IMPORTING INSTALLATION CONFIGURATION:'
 mv -v $WORKSPACE/Clueless/DEBIAN                  $PACKAGE
-chmod 555                                         $WORKSPACE/$PACKAGE/DEBIAN/*
+chmod -v 555                                      $WORKSPACE/$PACKAGE/DEBIAN/*
 
 echo 'SETTING VERSION:'
 sed -i "s/_VERSION_/${TAG_CONFIG}/g"              $WORKSPACE/$PACKAGE/DEBIAN/control

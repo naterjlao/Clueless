@@ -8,7 +8,24 @@
 ##############################################################################
 
 ANGULAR_DIR='/opt/clueless/src/frontend'
+BIN_DIR='/opt/clueless/bin'
+ETC_DIR='/opt/clueless/etc'
+USR_BIN='/usr/bin'
 
+# Configure executables in bin
+echo 'SETTING PERMISSIONS'
+chmod +x                           $BIN_DIR/clueless
+chmod -v 444                       $ETC_DIR/environment.ts.template
+
+echo 'CREATING SYMBOLIC LINK IN /usr/bin'
+ln    -sv     $BIN_DIR/clueless    $USR_BIN/clueless
+
+echo 'GENERATING DEFAULT CONFIGURATION'
+bash $BIN_DIR/setGlobalConfiguration.sh
+
+##############################################################################
+# Angular installation
+##############################################################################
 cd $ANGULAR_DIR
 
 echo 'RUNNING npm uninstall *'
@@ -16,6 +33,3 @@ npm uninstall *
 
 echo 'RUNNING npm install'
 npm install
-
-echo 'RUNNING ng build'
-ng build
