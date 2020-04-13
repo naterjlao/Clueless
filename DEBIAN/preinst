@@ -17,16 +17,16 @@ echo "KILLING npm"
 killall npm
 
 #echo "KILLING ng"
-#pkill -f ng
+#pkill -f ng # TODO THERE IS AN ISSUE WITH THIS DURING INSTALL
 
 ##############################################################################
 # Install NodeJS if necessary
 ##############################################################################
 echo "Installing NodeJS"
 
-#curl -sL https://deb.nodesource.com/setup_13.x | bash -      # Install from net the source code
-#npm install -fg --ignore-scripts @angular/cli                # Install ng
-#npm install -fg --ignore-scripts concurrently                # Install the npm concurrently command
+curl -sL https://deb.nodesource.com/setup_13.x | bash -      # Install from net the source code
+npm install -fg --ignore-scripts @angular/cli                # Install ng
+npm install -fg --ignore-scripts concurrently                # Install the npm concurrently command
 
 # TODO - must decide if configuring network and SSH is appropriate for this.
 # TODO - could be pushed as a procedure for User
