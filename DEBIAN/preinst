@@ -22,7 +22,7 @@ pkill -f ng
 ##############################################################################
 # Install NodeJS if necessary
 ##############################################################################
-echo 'Installing NodeJS'
+echo "Installing NodeJS"
 
 #curl -sL https://deb.nodesource.com/setup_13.x | bash -      # Install from net the source code
 #npm install -fg --ignore-scripts @angular/cli                # Install ng
@@ -30,3 +30,5 @@ echo 'Installing NodeJS'
 
 # TODO - must decide if configuring network and SSH is appropriate for this.
 # TODO - could be pushed as a procedure for User
+
+exit 0
