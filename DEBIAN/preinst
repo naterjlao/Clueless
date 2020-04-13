@@ -16,8 +16,8 @@ killall node
 echo "KILLING npm"
 killall npm
 
-echo "KILLING ng"
-pkill -f ng
+#echo "KILLING ng"
+#pkill -f ng
 
 ##############################################################################
 # Install NodeJS if necessary
