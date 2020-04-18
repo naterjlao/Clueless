@@ -7,7 +7,8 @@
 #       Debian post installation script.
 ##############################################################################
 
-ANGULAR_DIR='/opt/clueless/src/frontend'
+FRONTEND_DIR='/opt/clueless/src/frontend'
+SERVERSIDE_DIR='/opt/clueless/src/serverside'
 BIN_DIR='/opt/clueless/bin'
 ETC_DIR='/opt/clueless/etc'
 USR_BIN='/usr/bin'
@@ -24,12 +25,23 @@ echo 'GENERATING DEFAULT CONFIGURATION'
 bash $BIN_DIR/setGlobalConfiguration.sh
 
 ##############################################################################
-# Angular installation
+# Frontend Node installation
 ##############################################################################
-cd $ANGULAR_DIR
+cd $FRONTEND_DIR
 
-echo 'RUNNING npm uninstall *'
+echo "RUNNING npm uninstall * IN $FRONTEND_DIR"
 npm uninstall *
 
-echo 'RUNNING npm install'
+echo "RUNNING npm install IN $FRONTEND_DIR"
+npm install
+
+##############################################################################
+# Serverside Node installation
+##############################################################################
+cd $SERVERSIDE_DIR
+
+echo "RUNNING npm uninstall * IN $SERVERSIDE_DIR"
+npm uninstall *
+
+echo "RUNNING npm install IN $SERVERSIDE_DIR"
 npm install
