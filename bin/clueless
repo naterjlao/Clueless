@@ -69,19 +69,26 @@ elif (args.stop):
 elif (args.stop):
     print("STOPPING CLUELESS SERVER...")
     print("I am doing nothing because I am UNIMPLMENTED") #TODO
-elif (args.command == 'configure')
+elif (args.command == 'configure'):
+    
     if (args.serverIP != None):
         print("Setting server IP to %s" % args.serverIP)
-        print("I am doing nothing because I am UNIMPLMENTED") #TODO
+        subprocess.call(['bash',BIN_DIR+'/modifyConfig.sh','serverip',args.serverIP])
+        subprocess.call(['bash',BIN_DIR+'/setGlobalConfiguration.sh'])
+    
     if (args.serverPort != None):
         print("Setting server port number to %s" % args.serverPort)
-        print("I am doing nothing because I am UNIMPLMENTED") #TODO
+        subprocess.call(['bash',BIN_DIR+'/modifyConfig.sh','serverport',args.serverPort])
+        subprocess.call(['bash',BIN_DIR+'/setGlobalConfiguration.sh'])
+    
     if (args.httpPort != None):
         print("Setting HTTP port number to %s" % args.httpPort)
-        print("I am doing nothing because I am UNIMPLMENTED") #TODO
+        subprocess.call(['bash',BIN_DIR+'/modifyConfig.sh','httpport',args.httpPort])
+        subprocess.call(['bash',BIN_DIR+'/setGlobalConfiguration.sh'])
+    
+    if ((args.serverIP == None) and (args.serverPort == None) and (args.httpPort == None)):
+        print("Need --help ?")
    
 ################################################################################
 # END OF PARSING SECTION <<<
 ################################################################################
-
-print(args)
